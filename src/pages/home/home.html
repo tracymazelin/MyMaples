@@ -1,17 +1,39 @@
 <ion-header>
-  <ion-navbar>
-    <ion-title>Home</ion-title>
-  </ion-navbar>
+    <ion-navbar>
+        <ion-title>Maple Trees</ion-title>
+    </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-  <h2>Welcome to Ionic!</h2>
-  <p>
-    This starter project comes with simple tabs-based layout for apps
-    that are going to primarily use a Tabbed UI.
-  </p>
-  <p>
-    Take a look at the <code>src/pages/</code> directory to add or change tabs,
-    update any existing page or create new pages.
-  </p>
+
+    <h3 class="no-item" text-center *ngIf="loadTrees().length === 0">
+        No trees have been added yet. Add a new tree!
+    </h3>
+    <ion-list>
+        <ion-item-sliding *ngFor="let tree of loadTrees(); let i = index">
+            <ion-item>
+                <h2>{{tree.location}}</h2>
+                <p>{{tree.circumference}}</p>
+            </ion-item>
+            <ion-item-options>
+                <button (click)="editTree(tree, i)" ion-button color="primary" icon-start>
+            <ion-icon name="create"></ion-icon>
+            Edit
+          </button>
+
+
+
+                <button (click)="removeTree(tree, i)" ion-button color="danger" icon-start>
+            <ion-icon name="trash"></ion-icon>
+            Delete
+          </button>
+            </ion-item-options>
+        </ion-item-sliding>
+    </ion-list>
+
+    <ion-fab bottom right>
+        <button (click)="addTree()" ion-fab mini>
+        <ion-icon name="add"></ion-icon>
+      </button>
+    </ion-fab>
 </ion-content>
