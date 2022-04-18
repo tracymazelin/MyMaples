@@ -12,6 +12,8 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { InputDialogServiceProvider } from '../providers/input-dialog-service/input-dialog-service';
 import { TreeServiceProvider } from '../providers/tree-service/tree-service';
+import { Geolocation } from '@awesome-cordova-plugins/geolocation/ngx';
+import { ModalServiceProvider } from '../providers/modal-service/modal-service';
 
 @NgModule({
   declarations: [
@@ -38,7 +40,9 @@ import { TreeServiceProvider } from '../providers/tree-service/tree-service';
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     InputDialogServiceProvider,
-    TreeServiceProvider
+    TreeServiceProvider,
+    Geolocation,
+    ModalServiceProvider
   ]
 })
 export class AppModule {}
