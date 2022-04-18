@@ -5,7 +5,8 @@
     "homepage": "http://ionicframework.com/",
     "private": true,
     "engines": {
-        "node": "14.x"
+        "node": "14.x",
+        "npm": "7.x"
     },
     "scripts": {
         "start": "ionic-app-scripts serve",
