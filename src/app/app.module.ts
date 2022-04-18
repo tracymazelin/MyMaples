@@ -12,7 +12,6 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { InputDialogServiceProvider } from '../providers/input-dialog-service/input-dialog-service';
 import { TreeServiceProvider } from '../providers/tree-service/tree-service';
-import { Geolocation } from '@awesome-cordova-plugins/geolocation/ngx';
 import { ModalServiceProvider } from '../providers/modal-service/modal-service';
 
 @NgModule({

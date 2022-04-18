@@ -273,7 +273,6 @@ var HomePage = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(34);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_tree_service_tree_service__ = __webpack_require__(136);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__awesome_cordova_plugins_geolocation_ngx__ = __webpack_require__(258);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -286,7 +285,6 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
-
 /*
   Generated class for the InputDialogServiceProvider provider.
 
@@ -294,20 +292,13 @@ var __metadata = (this && this.__metadata) || function (k, v) {
   and Angular DI.
 */
 var InputDialogServiceProvider = /** @class */ (function () {
-    function InputDialogServiceProvider(alertCtrl, dataService, geolocation) {
+    function InputDialogServiceProvider(alertCtrl, dataService) {
         this.alertCtrl = alertCtrl;
         this.dataService = dataService;
-        this.geolocation = geolocation;
         console.log('Hello InputDialogServiceProvider Provider');
     }
     InputDialogServiceProvider.prototype.showPrompt = function (tree, index) {
         var _this = this;
-        this.geolocation.getCurrentPosition().then(function (resp) {
-            console.log("Latitude=" + resp.coords.latitude);
-            console.log("Longitude=" + resp.coords.longitude);
-        }).catch(function (error) {
-            console.log('Error getting location', error);
-        });
         var prompt = this.alertCtrl.create({
             title: tree ? 'Edit Tree' : 'Add Tree',
             message: tree ? "Please edit tree..." : "Please enter tree...",
@@ -348,22 +339,23 @@ var InputDialogServiceProvider = /** @class */ (function () {
     };
     InputDialogServiceProvider = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["A" /* Injectable */])(),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */], __WEBPACK_IMPORTED_MODULE_2__providers_tree_service_tree_service__["a" /* TreeServiceProvider */], __WEBPACK_IMPORTED_MODULE_3__awesome_cordova_plugins_geolocation_ngx__["a" /* Geolocation */]])
+        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__providers_tree_service_tree_service__["a" /* TreeServiceProvider */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__providers_tree_service_tree_service__["a" /* TreeServiceProvider */]) === "function" && _b || Object])
     ], InputDialogServiceProvider);
     return InputDialogServiceProvider;
+    var _a, _b;
 }());
 
 //# sourceMappingURL=input-dialog-service.js.map
 
 /***/ }),
 
-/***/ 351:
+/***/ 350:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__ = __webpack_require__(352);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__app_module__ = __webpack_require__(356);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__ = __webpack_require__(351);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__app_module__ = __webpack_require__(355);
 
 
 Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* platformBrowserDynamic */])().bootstrapModule(__WEBPACK_IMPORTED_MODULE_1__app_module__["a" /* AppModule */]);
@@ -371,7 +363,7 @@ Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* pl
 
 /***/ }),
 
-/***/ 356:
+/***/ 355:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -379,7 +371,7 @@ Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* pl
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__ = __webpack_require__(42);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(34);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__app_component__ = __webpack_require__(393);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__app_component__ = __webpack_require__(392);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__pages_sap_sap__ = __webpack_require__(254);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__pages_about_about__ = __webpack_require__(255);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__pages_home_home__ = __webpack_require__(256);
@@ -388,15 +380,13 @@ Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* pl
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__ionic_native_splash_screen__ = __webpack_require__(252);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__providers_input_dialog_service_input_dialog_service__ = __webpack_require__(257);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__providers_tree_service_tree_service__ = __webpack_require__(136);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__awesome_cordova_plugins_geolocation_ngx__ = __webpack_require__(258);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__providers_modal_service_modal_service__ = __webpack_require__(688);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__providers_modal_service_modal_service__ = __webpack_require__(688);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
-
 
 
 
@@ -442,8 +432,8 @@ var AppModule = /** @class */ (function () {
                 { provide: __WEBPACK_IMPORTED_MODULE_0__angular_core__["u" /* ErrorHandler */], useClass: __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["c" /* IonicErrorHandler */] },
                 __WEBPACK_IMPORTED_MODULE_10__providers_input_dialog_service_input_dialog_service__["a" /* InputDialogServiceProvider */],
                 __WEBPACK_IMPORTED_MODULE_11__providers_tree_service_tree_service__["a" /* TreeServiceProvider */],
-                __WEBPACK_IMPORTED_MODULE_12__awesome_cordova_plugins_geolocation_ngx__["a" /* Geolocation */],
-                __WEBPACK_IMPORTED_MODULE_13__providers_modal_service_modal_service__["a" /* ModalServiceProvider */]
+                Geolocation,
+                __WEBPACK_IMPORTED_MODULE_12__providers_modal_service_modal_service__["a" /* ModalServiceProvider */]
             ]
         })
     ], AppModule);
@@ -454,7 +444,7 @@ var AppModule = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 393:
+/***/ 392:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -540,5 +530,5 @@ var ModalServiceProvider = /** @class */ (function () {
 
 /***/ })
 
-},[351]);
+},[350]);
 //# sourceMappingURL=main.js.map
