@@ -1,11 +1,36 @@
 <ion-header>
     <ion-navbar>
         <ion-title>
-            Sap
+            Sap Collection
         </ion-title>
     </ion-navbar>
 </ion-header>
 
 <ion-content padding>
+    <ion-list>
+        <ion-item>
+            <ion-label color="primary">Tree</ion-label>
+            <ion-select [(ngModel)]="location">
+                <ion-option value="location">Test</ion-option>
+                <ion-option value="n64">Nintendo64</ion-option>
+                <ion-option value="ps">PlayStation</ion-option>
+                <ion-option value="genesis">Sega Genesis</ion-option>
+                <ion-option value="saturn">Sega Saturn</ion-option>
+                <ion-option value="snes">SNES</ion-option>
+            </ion-select>
+        </ion-item>
+        <ion-item>
+            <ion-label color="primary" floating>Collection Date</ion-label>
+            <ion-datetime [(ngModel)]="collection_date"></ion-datetime>
+        </ion-item>
 
+        <ion-item>
+            <ion-label color="primary" floating>Amount in Gallons</ion-label>
+            <ion-input [(ngModel)]="cicumference" type="number"></ion-input>
+        </ion-item>
+
+        <ion-item>
+            <button ion-button full color="primary" (click)="addSap()" large>Add Sap Collection</button>
+        </ion-item>
+    </ion-list>
 </ion-content>

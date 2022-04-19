@@ -5,35 +5,33 @@
 </ion-header>
 
 <ion-content padding>
-
-    <h3 class="no-item" text-center *ngIf="loadTrees().length === 0">
-        No trees have been added yet. Add a new tree!
-    </h3>
     <ion-list>
-        <ion-item-sliding *ngFor="let tree of loadTrees(); let i = index">
-            <ion-item>
-                <h2>{{tree.location}}</h2>
-                <p>{{tree.circumference}}</p>
-            </ion-item>
-            <ion-item-options>
-                <button (click)="editTree(tree, i)" ion-button color="primary" icon-start>
-            <ion-icon name="create"></ion-icon>
-            Edit
-          </button>
+        <ion-item>
+            <ion-label color="primary" floating>Tree Location</ion-label>
+            <ion-input [(ngModel)]="location"></ion-input>
 
-
-
-                <button (click)="removeTree(tree, i)" ion-button color="danger" icon-start>
-            <ion-icon name="trash"></ion-icon>
-            Delete
-          </button>
-            </ion-item-options>
-        </ion-item-sliding>
+        </ion-item>
+        <ion-item>
+            <button ion-button round (click)="getGPS()">Get GeoLocation</button>
+        </ion-item>
+        <ion-item>
+            <ion-label color="primary" floating>Tree Circumference</ion-label>
+            <ion-input [(ngModel)]="cicumference" type="number"></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label color="primary" floating>Number of Taps</ion-label>
+            <ion-input [(ngModel)]="taps" type="number"></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label color="primary" floating>Tap Date</ion-label>
+            <ion-datetime [(ngModel)]="date"></ion-datetime>
+        </ion-item>
+        <ion-item>
+            <ion-label color="primary" floating>Comments</ion-label>
+            <ion-input [(ngModel)]="comments"></ion-input>
+        </ion-item>
+        <ion-item>
+            <!-- <button ion-button (click)=" getGPS() ">Add Tree</button> -->
+        </ion-item>
     </ion-list>
-
-    <ion-fab bottom right>
-        <button (click)="addTree()" ion-fab mini>
-        <ion-icon name="add"></ion-icon>
-      </button>
-    </ion-fab>
 </ion-content>

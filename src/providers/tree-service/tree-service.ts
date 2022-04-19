@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 
+
 /*
   Generated class for the TreeServiceProvider provider.
 
@@ -12,11 +13,14 @@ export class TreeServiceProvider {
   trees = [];
 
   constructor() {
-    console.log('Hello TreeServiceProvider Provider');
+    
   }
 
   getTrees() {
+    
     return this.trees;
+    
+    
   }
 
   removeTree(index) {
@@ -25,6 +29,8 @@ export class TreeServiceProvider {
 
   addTree(tree) {
     this.trees.push(tree);
+  
+  
   }
 
   editTree(tree, index) {

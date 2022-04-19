@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { AlertController } from 'ionic-angular';
+import { ModalController, NavParams } from 'ionic-angular';
 import { TreeServiceProvider } from '../../providers/tree-service/tree-service';
 
 
@@ -11,13 +12,13 @@ import { TreeServiceProvider } from '../../providers/tree-service/tree-service';
 */
 @Injectable()
 export class InputDialogServiceProvider {
-  constructor(public alertCtrl: AlertController, public dataService: TreeServiceProvider) {
+  constructor(public modalCtrl: ModalController, public dataService: TreeServiceProvider) {
     console.log('Hello InputDialogServiceProvider Provider');
     
   }
 
   showPrompt(tree?, index?) {
-    const prompt = this.alertCtrl.create({
+    const modal = this.modalCtrl.create({
       title: tree ? 'Edit Tree' : 'Add Tree',
       message: tree ? "Please edit tree..." : "Please enter tree...",
       inputs: [
@@ -54,6 +55,6 @@ export class InputDialogServiceProvider {
         }
       ]
     });
-    prompt.present();
+    modal.present();
   }
 }

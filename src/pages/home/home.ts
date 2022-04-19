@@ -1,9 +1,10 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { ToastController } from 'ionic-angular';
-import { AlertController } from 'ionic-angular';
 import { TreeServiceProvider } from '../../providers/tree-service/tree-service';
-import { InputDialogServiceProvider } from '../../providers/input-dialog-service/input-dialog-service';
+import { ModalServiceProvider } from '../../providers/modal-service/modal-service';
+import { Geolocation } from '@ionic-native/geolocation';
+
 
 @Component({
   selector: 'page-home',
@@ -12,39 +13,27 @@ import { InputDialogServiceProvider } from '../../providers/input-dialog-service
 export class HomePage {
 
   title = "Trees";
+  public location:string ='';
+  public circumference:number;
+  
 
-  constructor(public navCtrl: NavController, public toastCtrl: ToastController, public alertCtrl: AlertController, public dataService: TreeServiceProvider, public inputDialogService: InputDialogServiceProvider) {
+
+  constructor(public navCtrl: NavController, public toastCtrl: ToastController, public dataService: TreeServiceProvider, 
+    public modalService: ModalServiceProvider, private geolocation: Geolocation) {
 
   }
 
-  loadTrees() {
-    return this.dataService.getTrees();
-  }
-
-  removeTree(tree, index) {
-    console.log("Removing Item - ", tree, index);
-    const toast = this.toastCtrl.create({
-      message: 'Removing Item - ' + index + " ...",
-      duration: 3000
-    });
-    toast.present();
-
-    this.dataService.removeTree(index);  
+  getGPS(){
+    this.geolocation.getCurrentPosition().then((resp) => {
+      // resp.coords.latitude
+      // resp.coords.longitude
+      this.location = 'Latitude: ' + resp.coords.latitude +' Longitude: ' + resp.coords.longitude
+     }).catch((error) => {
+       console.log('Error getting location', error);
+     });
   }
 
   
-  editTree(tree, index) {
-    console.log("Edit Tree - ", tree, index);
-    const toast = this.toastCtrl.create({
-      message: 'Editing Tree - ' + index + " ...",
-      duration: 3000
-    });
-    toast.present();
-    this.inputDialogService.showPrompt(tree, index);
-  }  
 
-  addTree() {
-    console.log("Adding Tree");
-    this.inputDialogService.showPrompt();
-  }
+  
 }
