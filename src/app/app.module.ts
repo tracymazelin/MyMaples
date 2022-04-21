@@ -13,7 +13,7 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { InputDialogServiceProvider } from '../providers/input-dialog-service/input-dialog-service';
 import { TreeServiceProvider } from '../providers/tree-service/tree-service';
-import { ModalServiceProvider } from '../providers/modal-service/modal-service';
+//import { ModalServiceProvider } from '../providers/modal-service/modal-service';
 import { IonicStorageModule } from '@ionic/storage';
 import { ModalController, NavParams } from 'ionic-angular';
 
@@ -48,7 +48,7 @@ import { ModalController, NavParams } from 'ionic-angular';
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     InputDialogServiceProvider,
     TreeServiceProvider,
-    ModalServiceProvider,
+    //ModalServiceProvider,
     Geolocation
   ]
 })

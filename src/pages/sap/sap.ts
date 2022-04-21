@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
-import { Storage } from '@ionic/storage';
+
 
 @Component({
   selector: 'page-sap',
@@ -15,13 +15,13 @@ export class SapPage {
   }
 
   saveData(){
-    this.storage.set(this.key, this.inputtext)
+    //this.storage.set(this.key, this.inputtext)
   }
 
   loadData(){
-    this.storage.get(this.key).then((val) => {
-      console.log('Your username is', val);
-    });
+    // this.storage.get(this.key).then((val) => {
+    //   console.log('Your username is', val);
+    // });
 
   }
 

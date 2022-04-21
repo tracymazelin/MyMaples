@@ -45,7 +45,7 @@ export class InputDialogServiceProvider {
           handler: tree => {
             console.log('Saved clicked', tree);
             if (index !== undefined) {
-              this.dataService.editTree(tree, index);
+              this.dataService.editTree(tree);
             }
             else {
               this.dataService.addTree(tree);
