@@ -4,54 +4,22 @@
     </ion-navbar>
 </ion-header>
 
-<ion-content padding>
-    <ion-list>
-        <ion-item>
-            <ion-label color="primary" floating>Tree Nickname</ion-label>
-            <ion-input [(ngModel)]="newTree.nickname"></ion-input>
-        </ion-item>
-        <ion-item>
-            <ion-label color="primary" floating>Tree Location</ion-label>
-            <ion-input [(ngModel)]="newTree.location"></ion-input>
-
-        </ion-item>
-
-        <ion-item>
-            <ion-label color="primary" floating>Tree Circumference</ion-label>
-            <ion-input [(ngModel)]="newTree.circumference" type="number"></ion-input>
-        </ion-item>
-        <ion-item>
-            <ion-label color="primary" floating>Number of Taps</ion-label>
-            <ion-input [(ngModel)]="newTree.number_taps" type="number"></ion-input>
-        </ion-item>
-        <ion-item>
-            <ion-label color="primary" floating>Tap Date</ion-label>
-            <ion-datetime [(ngModel)]="newTree.tap_date"></ion-datetime>
-        </ion-item>
-        <ion-item>
-            <ion-label color="primary" floating>Comments</ion-label>
-            <ion-input [(ngModel)]="newTree.comments"></ion-input>
-        </ion-item>
-        <ion-item>
-            <button ion-button (click)="addTree()">Add Tree</button>
-        </ion-item>
-
-
-        <ion-item *ngFor="let tree of trees">
-            <ion-item>
-                <p (click)="deleteTree(tree)">{{tree.id}}</p>
-                <p>{{tree.nickname}}</p>
-                <p>{{tree.circumference}}</p>
-                <p>{{tree.location}}</p>
-                <p>{{tree.number_taps}}</p>
-                <p>{{tree.tap_date}}</p>
-                <p>{{tree.comments}}</p>
-            </ion-item>
-
-        </ion-item>
-    </ion-list>
+<ion-content>
+    <!-- <h3 class="no-item" text-center *ngIf="loadTrees().length === 0">
+        No item available on the list!
+    </h3> -->
+    <ion-card *ngFor="let tree of trees">
+        <ion-card-content>
+            <h1>{{tree.nickname}}</h1>
+            <ion-badge item-end>Location: {{tree.latitude}}, {{tree.longitude}}</ion-badge>
+            <p>Circumference: {{tree.circumference}}</p>
+            <p>Number of Taps: {{tree.number_taps}}</p>
+            <p>Date Tapped: {{tree.tap_date}}</p>
+            <p *ngIf="tree.comments !== undefined && tree.comments">Comments: {{tree.comments}}</p>
+        </ion-card-content>
+    </ion-card>
     <ion-fab bottom right>
-        <button (click)="addTree()" ion-fab mini>
+        <button (click)="openModal()" ion-fab mini>
       <ion-icon name="add"></ion-icon>
     </button>
     </ion-fab>

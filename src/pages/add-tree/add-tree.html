@@ -1,0 +1,44 @@
+<ion-header>
+    <ion-navbar>
+        <ion-title>Add a new Maple Tree</ion-title>
+        <ion-buttons end>
+            <button ion-button (click)="closeModal()">Close</button>
+        </ion-buttons>
+    </ion-navbar>
+</ion-header>
+<ion-content padding>
+    <ion-list>
+        <ion-item>
+            <ion-label color="primary" floating>Tree Nickname</ion-label>
+            <ion-input [(ngModel)]="tree.nickname" type="string"></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label color="primary" floating>Tree Latitude</ion-label>
+            <ion-input [(ngModel)]="tree.latitude" type="number"></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label color="primary" floating>Tree Longitude</ion-label>
+            <ion-input [(ngModel)]="tree.longitude" type="number"></ion-input>
+        </ion-item>
+
+        <ion-item>
+            <ion-label color="primary" floating>Tree Circumference (inches)</ion-label>
+            <ion-input [(ngModel)]="tree.circumference" type="number" clearInput=true></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label color="primary" floating>Number of Taps</ion-label>
+            <ion-input [(ngModel)]="tree.number_taps" (click)="calculateNumberOfTaps()" type="number"></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label color="primary" floating>Tap Date</ion-label>
+            <ion-datetime [(ngModel)]="tree.tap_date" type="string"></ion-datetime>
+        </ion-item>
+        <ion-item>
+            <ion-label color="primary" floating>Comments</ion-label>
+            <ion-input [(ngModel)]="tree.comments" type="string"></ion-input>
+        </ion-item>
+        <ion-item>
+            <button ion-button (click)="addTree()">Add Tree</button>
+        </ion-item>
+    </ion-list>
+</ion-content>

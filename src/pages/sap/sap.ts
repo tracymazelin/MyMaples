@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
+import { DataServiceProvider, Tree } from '../../providers/data-service/data-service';
+
 
 
 @Component({
@@ -7,21 +9,14 @@ import { NavController } from 'ionic-angular';
   templateUrl: 'sap.html'
 })
 export class SapPage {
-  inputtext:string;
-  key:string = 'tree1'
-
-  constructor(public navCtrl: NavController, private storage: Storage) {
-
+ 
+  trees: Tree[] = [];
+  
+  constructor(public navCtrl: NavController, private treeProvider:DataServiceProvider) {
+    this.treeProvider.getTrees()
   }
 
-  saveData(){
-    //this.storage.set(this.key, this.inputtext)
-  }
-
-  loadData(){
-    // this.storage.get(this.key).then((val) => {
-    //   console.log('Your username is', val);
-    // });
+  addSap(){
 
   }
 
