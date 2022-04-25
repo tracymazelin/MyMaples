@@ -4,19 +4,22 @@ import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { MyApp } from './app.component';
 import { Geolocation } from '@ionic-native/geolocation';
 import { SapPage } from '../pages/sap/sap';
-import { AboutPage } from '../pages/about/about';
+import { MetricsPage } from '../pages/metrics/metrics';
 import { HomePage } from '../pages/home/home';
 import { TabsPage } from '../pages/tabs/tabs';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
-import { DataServiceProvider } from '../providers/data-service/data-service';
+import { TreeServiceProvider } from '../providers/data-service/tree-service';
+import { SapServiceProvider } from '../providers/data-service/sap-service';
 import { IonicStorageModule } from '@ionic/storage';
+import { AppProvider } from '../providers/app/app';
+
 
 @NgModule({
   declarations: [
     MyApp,
     SapPage,
-    AboutPage,
+    MetricsPage,
     HomePage,
     TabsPage
   ],
@@ -33,7 +36,7 @@ import { IonicStorageModule } from '@ionic/storage';
   entryComponents: [
     MyApp,
     SapPage,
-    AboutPage,
+    MetricsPage,
     HomePage,
     TabsPage
   ],
@@ -41,9 +44,10 @@ import { IonicStorageModule } from '@ionic/storage';
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    DataServiceProvider,
+    TreeServiceProvider,
+    SapServiceProvider,
     Geolocation,
-   
+    AppProvider,
   ]
 })
 export class AppModule {}

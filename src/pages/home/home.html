@@ -5,17 +5,17 @@
 </ion-header>
 
 <ion-content>
-    <!-- <h3 class="no-item" text-center *ngIf="loadTrees().length === 0">
-        No item available on the list!
-    </h3> -->
-    <ion-card *ngFor="let tree of trees">
+    <ion-item text-center *ngIf="trees?.length === 0 || !trees">
+        No trees have been added yet. Add one!
+    </ion-item>
+    <ion-card *ngFor="let tree of trees; let i = index" (click)="getTreeIndex(i)">
         <ion-card-content>
             <h1>{{tree.nickname}}</h1>
             <ion-badge item-end>Location: {{tree.latitude}}, {{tree.longitude}}</ion-badge>
             <p>Circumference: {{tree.circumference}}</p>
             <p>Number of Taps: {{tree.number_taps}}</p>
             <p>Date Tapped: {{tree.tap_date}}</p>
-            <p *ngIf="tree.comments !== undefined && tree.comments">Comments: {{tree.comments}}</p>
+            <p *ngIf="tree.comments !==undefined && tree.comments">Comments: {{tree.comments}}</p>
         </ion-card-content>
     </ion-card>
     <ion-fab bottom right>

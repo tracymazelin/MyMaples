@@ -1,14 +1,14 @@
 webpackJsonp([0],{
 
-/***/ 276:
+/***/ 278:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AddTreePageModule", function() { return AddTreePageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(32);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__add_tree__ = __webpack_require__(277);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(27);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__add_tree__ = __webpack_require__(279);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -27,7 +27,7 @@ var AddTreePageModule = /** @class */ (function () {
                 __WEBPACK_IMPORTED_MODULE_2__add_tree__["a" /* AddTreePage */],
             ],
             imports: [
-                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__add_tree__["a" /* AddTreePage */]),
+                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__add_tree__["a" /* AddTreePage */]),
             ],
         })
     ], AddTreePageModule);
@@ -38,16 +38,16 @@ var AddTreePageModule = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 277:
+/***/ 279:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AddTreePage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(32);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_data_service_data_service__ = __webpack_require__(50);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_geolocation__ = __webpack_require__(200);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ionic_storage__ = __webpack_require__(102);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(27);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_data_service_tree_service__ = __webpack_require__(50);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_geolocation__ = __webpack_require__(202);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ionic_storage__ = __webpack_require__(51);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -62,12 +62,6 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
-/**
- * Generated class for the AddTreePage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
 var AddTreePage = /** @class */ (function () {
     function AddTreePage(view, navParams, plt, toastCtrl, storage, loadingCtrl, modal, storageService, geolocation) {
         this.view = view;
@@ -81,8 +75,6 @@ var AddTreePage = /** @class */ (function () {
         this.geolocation = geolocation;
         this.trees = [];
         this.tree = {};
-        this.tree.id = Date.now();
-        this.getGPS();
     }
     AddTreePage.prototype.closeModal = function () {
         this.view.dismiss();
@@ -97,12 +89,15 @@ var AddTreePage = /** @class */ (function () {
         });
     };
     AddTreePage.prototype.addTree = function () {
-        this.storageService.addTree(this.tree).then(function (tree) {
+        var _this = this;
+        this.storageService.addTree(this.tree).then(function () {
+            _this.view.dismiss();
         });
-        this.view.dismiss();
     };
-    AddTreePage.prototype.ionViewDidLoad = function () {
-        console.log(this.tree);
+    AddTreePage.prototype.ionViewWillLoad = function () {
+        this.tree.id = Date.now();
+        this.getGPS();
+        this.presentLoading();
     };
     AddTreePage.prototype.calculateNumberOfTaps = function () {
         var diameter = (this.tree.circumference) / Math.PI;
@@ -133,10 +128,10 @@ var AddTreePage = /** @class */ (function () {
     };
     AddTreePage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-add-tree',template:/*ion-inline-start:"/Users/tmazelin/Documents/Masters Degree/Advanced Topics/my-maples/src/pages/add-tree/add-tree.html"*/'<ion-header>\n    <ion-navbar>\n        <ion-title>Add a new Maple Tree</ion-title>\n        <ion-buttons end>\n            <button ion-button (click)="closeModal()">Close</button>\n        </ion-buttons>\n    </ion-navbar>\n</ion-header>\n<ion-content padding>\n    <ion-list>\n        <ion-item>\n            <ion-label color="primary" floating>Tree Nickname</ion-label>\n            <ion-input [(ngModel)]="tree.nickname" type="string"></ion-input>\n        </ion-item>\n        <ion-item>\n            <ion-label color="primary" floating>Tree Latitude</ion-label>\n            <ion-input [(ngModel)]="tree.latitude" type="number"></ion-input>\n        </ion-item>\n        <ion-item>\n            <ion-label color="primary" floating>Tree Longitude</ion-label>\n            <ion-input [(ngModel)]="tree.longitude" type="number"></ion-input>\n        </ion-item>\n\n        <ion-item>\n            <ion-label color="primary" floating>Tree Circumference (inches)</ion-label>\n            <ion-input [(ngModel)]="tree.circumference" type="number" clearInput=true></ion-input>\n        </ion-item>\n        <ion-item>\n            <ion-label color="primary" floating>Number of Taps</ion-label>\n            <ion-input [(ngModel)]="tree.number_taps" (click)="calculateNumberOfTaps()" type="number"></ion-input>\n        </ion-item>\n        <ion-item>\n            <ion-label color="primary" floating>Tap Date</ion-label>\n            <ion-datetime [(ngModel)]="tree.tap_date" type="string"></ion-datetime>\n        </ion-item>\n        <ion-item>\n            <ion-label color="primary" floating>Comments</ion-label>\n            <ion-input [(ngModel)]="tree.comments" type="string"></ion-input>\n        </ion-item>\n        <ion-item>\n            <button ion-button (click)="addTree()">Add Tree</button>\n        </ion-item>\n    </ion-list>\n</ion-content>'/*ion-inline-end:"/Users/tmazelin/Documents/Masters Degree/Advanced Topics/my-maples/src/pages/add-tree/add-tree.html"*/,
+            selector: 'page-add-tree',template:/*ion-inline-start:"/Users/tmazelin/Documents/Masters Degree/Advanced Topics/my-maples/src/pages/add-tree/add-tree.html"*/'<ion-header>\n    <ion-navbar>\n        <ion-title>Add a new Maple Tree</ion-title>\n        <ion-buttons end>\n            <button ion-button (click)="closeModal()">Close</button>\n        </ion-buttons>\n    </ion-navbar>\n</ion-header>\n<ion-content padding>\n    <ion-list>\n        <ion-item>\n            <ion-label color="primary" floating>Tree Nickname</ion-label>\n            <ion-input [(ngModel)]="tree.nickname" type="string"></ion-input>\n        </ion-item>\n        <ion-item>\n            <ion-label color="primary" floating>Tree Latitude</ion-label>\n            <ion-input [(ngModel)]="tree.latitude" type="number"></ion-input>\n        </ion-item>\n        <ion-item>\n            <ion-label color="primary" floating>Tree Longitude</ion-label>\n            <ion-input [(ngModel)]="tree.longitude" type="number"></ion-input>\n        </ion-item>\n\n        <ion-item>\n            <ion-label color="primary" floating>Tree Circumference (inches)</ion-label>\n            <ion-input [(ngModel)]="tree.circumference" type="number" clearInput=true></ion-input>\n        </ion-item>\n        <ion-item>\n            <ion-label color="primary" floating>Number of Taps</ion-label>\n            <ion-input [(ngModel)]="tree.number_taps" (click)="calculateNumberOfTaps()" type="number"></ion-input>\n        </ion-item>\n        <ion-item>\n            <ion-label color="primary" floating>Tap Date</ion-label>\n            <ion-datetime [(ngModel)]="tree.tap_date" type="string"></ion-datetime>\n        </ion-item>\n        <ion-item>\n            <ion-label color="primary" floating>Comments</ion-label>\n            <ion-input [(ngModel)]="tree.comments" type="string"></ion-input>\n        </ion-item>\n\n    </ion-list>\n</ion-content>\n<ion-footer>\n    <ion-toolbar>\n        <button ion-button (click)="addTree()">SAVE</button>\n    </ion-toolbar>\n</ion-footer>'/*ion-inline-end:"/Users/tmazelin/Documents/Masters Degree/Advanced Topics/my-maples/src/pages/add-tree/add-tree.html"*/,
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* ViewController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* Platform */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* ToastController */],
-            __WEBPACK_IMPORTED_MODULE_4__ionic_storage__["b" /* Storage */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* LoadingController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* ModalController */], __WEBPACK_IMPORTED_MODULE_2__providers_data_service_data_service__["a" /* DataServiceProvider */], __WEBPACK_IMPORTED_MODULE_3__ionic_native_geolocation__["a" /* Geolocation */]])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["l" /* ViewController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* Platform */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* ToastController */],
+            __WEBPACK_IMPORTED_MODULE_4__ionic_storage__["b" /* Storage */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* LoadingController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* ModalController */], __WEBPACK_IMPORTED_MODULE_2__providers_data_service_tree_service__["a" /* TreeServiceProvider */], __WEBPACK_IMPORTED_MODULE_3__ionic_native_geolocation__["a" /* Geolocation */]])
     ], AddTreePage);
     return AddTreePage;
 }());

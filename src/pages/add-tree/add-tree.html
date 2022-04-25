@@ -37,8 +37,11 @@
             <ion-label color="primary" floating>Comments</ion-label>
             <ion-input [(ngModel)]="tree.comments" type="string"></ion-input>
         </ion-item>
-        <ion-item>
-            <button ion-button (click)="addTree()">Add Tree</button>
-        </ion-item>
+
     </ion-list>
 </ion-content>
+<ion-footer>
+    <ion-toolbar>
+        <button ion-button (click)="addTree()">SAVE</button>
+    </ion-toolbar>
+</ion-footer>

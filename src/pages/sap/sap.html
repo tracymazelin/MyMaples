@@ -5,26 +5,24 @@
         </ion-title>
     </ion-navbar>
 </ion-header>
-
 <ion-content padding>
     <ion-item>
         <ion-label color="primary" floating>Tree</ion-label>
-        <ion-select [(ngModel)]="tree">
+        <ion-select [(ngModel)]="sap.tree">
             <ion-option *ngFor="let tree of trees">{{tree.nickname}}</ion-option>
         </ion-select>
     </ion-item>
     <ion-item>
         <ion-label color="primary" floating>Collection Date</ion-label>
-        <ion-datetime [(ngModel)]="collection_date"></ion-datetime>
+        <ion-datetime [(ngModel)]="sap.collection_date"></ion-datetime>
     </ion-item>
 
     <ion-item>
         <ion-label color="primary" floating>Amount in Gallons</ion-label>
-        <ion-input [(ngModel)]="quantity" type="number"></ion-input>
+        <ion-input [(ngModel)]="sap.number_gallons" type="number"></ion-input>
     </ion-item>
 
-    <ion-item>
-        <button ion-button full color="primary" (click)="addSap()" large>Add Sap Collection</button>
+    <ion-item padding>
+        <button ion-button full color="primary" (click)="addSap()">Add Sap Collection Quantity</button>
     </ion-item>
-
 </ion-content>

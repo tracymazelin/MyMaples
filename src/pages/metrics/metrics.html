@@ -1,0 +1,24 @@
+<ion-header>
+    <ion-navbar>
+        <ion-title>
+            Total Sap for the Season
+        </ion-title>
+    </ion-navbar>
+</ion-header>
+<ion-content>
+
+    <ion-list *ngFor="let total of totals">
+        <ion-item>
+            <ion-thumbnail item-start>
+                <img src="/assets/imgs/maples.jpg">
+            </ion-thumbnail>
+            <h2>{{total.tree}}</h2>
+            <ion-badge color="secondary">Total Sap: {{total.number_gallons}}</ion-badge>
+        </ion-item>
+    </ion-list>
+    <ion-item>
+        <h1>Grand Total: {{grandTotal}} </h1>
+        <p>Built with: Ionic v3</p>
+        <p>Developer: Tracy Mazelin</p>
+    </ion-item>
+</ion-content>
