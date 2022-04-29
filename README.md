@@ -1,5 +1,7 @@
 # My Maples
-An Ionic 3 hybrid mobile application for Android and iOS using the ionic storage module for indexeddb/sqlite and the capacitor geo location native module.  This application is for maple syrup hobbyists who have numerous maple trees on their property and want to store the maple tree geo-locations, the sap production for each tree and keep track of metrics for how much sap each tree has produced in a season.
+An Ionic 3 hybrid mobile application for Android and iOS using the ionic storage module for indexeddb/sqlite and the capacitor geo location native module.  
+
+This application is for maple syrup hobbyists who have numerous maple trees on their property and want to store the maple tree geo-locations, the sap production for each tree and keep track of metrics for how much sap each tree has produced in a season.
 
 #### Created by: Tracy Mazelin ####
 
@@ -29,11 +31,24 @@ An Ionic 3 hybrid mobile application for Android and iOS using the ionic storage
     $ npm i
     $ ionic serve
  
+# Screenshots
 
-| Screenshots                                                 |                                                                |          
-|-------------------------------------------------------------|----------------------------------------------------------------|
-| ![Zero state trees](src/screenshots/zero-state-trees.png)   | ![Zero state metrics](src/screenshots/zero-state-metrics.png)  |
-| ![Zero state metrics](src/screenshots/add-tree.png)         | ![Zero state metrics](src/screenshots/trees.png)               |
-| ![Zero state metrics](src/screenshots/action-sheet.png)     | ![Zero state metrics](src/screenshots/dates.png)               | 
-| ![Zero state metrics](src/screenshots/add-sap.png)          | ![Zero state metrics](src/screenshots/get-geo-location.png)    |
-| ![Zero state metrics](src/screenshots/toaster.png)          | ![Zero state metrics](src/screenshots/metrics.png)             |
+| Tree tab: zero state                                       | Metrics tab: zero state                                              |          
+|------------------------------------------------------------|----------------------------------------------------------------------|
+| <img src="src/screenshots/zero-trees.png" width="600" />   | <img src="src/screenshots/zero-metrics.png" width="600" />     |
+
+| Tree tab: list of trees                                    | Add tree modal                                                       |          
+|------------------------------------------------------------|----------------------------------------------------------------------|
+| <img src="src/screenshots/trees.png" width="600" />        | <img src="src/screenshots/add-tree.png" width="600" />                                    
+
+| Add tree modal: geo loaction loading                       | Add tree modal: action sheet                                      |  
+|------------------------------------------------------------|----------------------------------------------------------------------|
+| <img src="src/screenshots/geo-location.png" width="600" /> | <img src="src/screenshots/action-sheet.png" width="600" />                              | 
+
+| Add sap tab: date selector                                 | Metrics tab: zero state                                              |  
+|------------------------------------------------------------|----------------------------------------------------------------------|
+| <img src="src/screenshots/dates.png" width="600" />        | <img src="src/screenshots/add-sap.png" width="600">                                    
+
+| Add sap tab: sap added toaster                             | Metrics tab: zero state                                              |  
+|------------------------------------------------------------|----------------------------------------------------------------------|
+| <img src="src/screenshots/toaster.png" width="600" />      | <img src="src/screenshots/metrics.png" width="600" />                                     |
