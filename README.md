@@ -41,14 +41,14 @@ This application is for maple syrup hobbyists who have numerous maple trees on t
 |------------------------------------------------------------|----------------------------------------------------------------------|
 | <img src="src/screenshots/trees.png" width="600" />        | <img src="src/screenshots/add-tree.png" width="600" />                                    
 
-| Add tree modal: geo loaction loading                       | Add tree modal: action sheet                                      |  
+| Add tree modal: geo loaction loading                       | Trees tab: action sheet                                              |  
 |------------------------------------------------------------|----------------------------------------------------------------------|
 | <img src="src/screenshots/geo-location.png" width="600" /> | <img src="src/screenshots/action-sheet.png" width="600" />                              | 
 
-| Add sap tab: date selector                                 | Metrics tab: zero state                                              |  
+| Add tree modal: date selector                              | Metrics tab: zero state                                              |  
 |------------------------------------------------------------|----------------------------------------------------------------------|
 | <img src="src/screenshots/dates.png" width="600" />        | <img src="src/screenshots/add-sap.png" width="600">                                    
 
-| Add sap tab: sap added toaster                             | Metrics tab: zero state                                              |  
+| Add sap tab: sap added toaster                             | Metrics tab: sap collection summaries                                |  
 |------------------------------------------------------------|----------------------------------------------------------------------|
 | <img src="src/screenshots/toaster.png" width="600" />      | <img src="src/screenshots/metrics.png" width="600" />                                     |
