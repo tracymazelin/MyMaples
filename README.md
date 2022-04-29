@@ -33,13 +33,13 @@ This application is for maple syrup hobbyists who have numerous maple trees on t
  
 # Screenshots
 
-| Tree tab: zero state                                       | Metrics tab: zero state                                              |          
-|------------------------------------------------------------|----------------------------------------------------------------------|
-| <img src="src/screenshots/zero-trees.png" width="600" />   | <img src="src/screenshots/zero-metrics.png" width="600" />     |
-
 | Tree tab: list of trees                                    | Add tree modal                                                       |          
 |------------------------------------------------------------|----------------------------------------------------------------------|
 | <img src="src/screenshots/trees.png" width="600" />        | <img src="src/screenshots/add-tree.png" width="600" />                                    
+
+| Tree tab: zero state                                       | Metrics tab: zero state                                              |          
+|------------------------------------------------------------|----------------------------------------------------------------------|
+| <img src="src/screenshots/zero-trees.png" width="600" />   | <img src="src/screenshots/zero-metrics.png" width="600" />           |
 
 | Add tree modal: geo loaction loading                       | Trees tab: action sheet                                              |  
 |------------------------------------------------------------|----------------------------------------------------------------------|
