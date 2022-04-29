@@ -1,5 +1,5 @@
 # My Maples
-An Ionic 3 hybrid mobile application for Android and iOS using the ionic storage module for indexeddb/sqlite and the capacitor geo location native module.  
+An Ionic 3 hybrid mobile application for Android and iOS using the Ionic storage module for indexeddb/sqlite and the Ionic Cordova Geolocation plugin for storing tree longitude and latitude data.  
 
 This application is for maple syrup hobbyists who have numerous maple trees on their property and want to store the maple tree geo-locations, the sap production for each tree and keep track of metrics for how much sap each tree has produced in a season.
 

@@ -21,7 +21,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var SapServiceProvider = /** @class */ (function () {
     function SapServiceProvider(storage) {
         this.storage = storage;
-        this.KEY = "saps";
+        this.KEY = "saps"; // ie table name
     }
     SapServiceProvider.prototype.addSap = function (sap) {
         var _this = this;
@@ -142,12 +142,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 
-/*
-  Generated class for the AppProvider provider.
-
-  See https://angular.io/guide/dependency-injection for more info on providers
-  and Angular DI.
-*/
+// Custom theme
 var AppProvider = /** @class */ (function () {
     function AppProvider() {
         this.activeTheme = "theme-mymaples";
@@ -305,6 +300,7 @@ var MetricsPage = /** @class */ (function () {
     MetricsPage.prototype.ionViewWillLoad = function () {
         this.calculateTotalSapByTree();
     };
+    // loop over the sap objects to reduce them uniquely by tree.  Then sum the sap quanities.
     MetricsPage.prototype.calculateTotalSapByTree = function () {
         var _this = this;
         this.sapDataProvider.getSap().then(function (sap) {
@@ -319,6 +315,7 @@ var MetricsPage = /** @class */ (function () {
             }
         });
     };
+    // add up the grad total sap from all the trees
     MetricsPage.prototype.calculateGrandTotal = function () {
         var _this = this;
         this.totals.forEach(function (element) {
@@ -360,6 +357,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 var HomePage = /** @class */ (function () {
+    // use objects to manipulate the data then use the storage provider to add, edit, delete, and read the objects from the db.
     function HomePage(storageService, view, modal, actionSheet, navParams) {
         this.storageService = storageService;
         this.view = view;
@@ -614,14 +612,10 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 
 
-// export interface Location {
-//   latitude: number,
-//   longitude: number
-// }
 var TreeServiceProvider = /** @class */ (function () {
     function TreeServiceProvider(storage) {
         this.storage = storage;
-        this.KEY = "trees";
+        this.KEY = "trees"; // ie table name
     }
     TreeServiceProvider.prototype.addTree = function (tree) {
         var _this = this;
