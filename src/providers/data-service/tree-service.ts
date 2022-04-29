@@ -3,7 +3,6 @@ import { Storage } from '@ionic/storage';
 
 export interface Tree {
   id: number,
-  //location: Location,
   latitude: number,
   longitude: number,
   nickname: string,
@@ -13,19 +12,12 @@ export interface Tree {
   comments: string;
 }
 
-// export interface Location {
-//   latitude: number,
-//   longitude: number
-// }
-
-
 @Injectable()
 export class TreeServiceProvider {
-  constructor(private storage: Storage) {
-   
+  constructor(private storage: Storage) {   
   }
   
-  KEY = "trees"
+  KEY = "trees"  // ie table name
  
   addTree(tree: Tree): Promise<any> {
     return this.storage.get(this.KEY).then((trees: Tree[])=>{

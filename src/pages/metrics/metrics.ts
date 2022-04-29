@@ -20,6 +20,7 @@ export class MetricsPage {
     this.calculateTotalSapByTree() 
   }
 
+  // loop over the sap objects to reduce them uniquely by tree.  Then sum the sap quanities.
   calculateTotalSapByTree(){
     this.sapDataProvider.getSap().then((sap) => {
       this.sapData = sap;
@@ -36,10 +37,10 @@ export class MetricsPage {
      });
   }
 
+  // add up the grad total sap from all the trees
   calculateGrandTotal(){
       this.totals.forEach(element => {
         this.grandTotal += element.number_gallons
       });
     }
-  
 }

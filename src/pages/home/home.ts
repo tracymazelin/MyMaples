@@ -14,6 +14,7 @@ export class HomePage {
   tree: Tree 
   index: number
 
+  // use objects to manipulate the data then use the storage provider to add, edit, delete, and read the objects from the db.
 
   constructor(public storageService: TreeServiceProvider, public view: ViewController, private modal: ModalController, public actionSheet: ActionSheetController, public navParams: NavParams) {
     this.loadTrees();
@@ -25,7 +26,6 @@ export class HomePage {
     addTreeModal.onDidDismiss(() => {
       this.loadTrees()
     })
-    
   }
 
   loadTrees(){

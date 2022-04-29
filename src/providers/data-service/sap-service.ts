@@ -12,10 +12,9 @@ export interface Sap {
 @Injectable()
 export class SapServiceProvider {
   constructor(private storage: Storage) {
-   
   }
 
-  KEY = "saps"
+  KEY = "saps"  // ie table name
  
   addSap(sap: Sap): Promise<any> {
     return this.storage.get(this.KEY).then((saps: Sap[])=>{
@@ -26,7 +25,6 @@ export class SapServiceProvider {
         return this.storage.set(this.KEY, [sap])
       }
     })
-  
   }
 
   getSap(): Promise<Sap[]>{
